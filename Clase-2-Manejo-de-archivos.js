@@ -46,36 +46,23 @@ class Contenedor {
             return []
         }
     }
-    async deleteById(id) {
-        /*  const objs = await this.getAll();
-         const obj = objs.map(x => x.id != id);
+
+    //rehacer
+    /* async deleteById(arr, value) {
+        const objs2 = await fs.readFile(this.ruta, 'utf-8');
+        let objs = JSON.parse(objs2)
+
+        var index = objs.indexOf(value);
+        
+        if (index > -1) {
+            objs.splice(index, 1);
+        }
+        return arr;
+
+        
+    } */
+
        
-        console.log(obj); */
-
-        await fs.readFile('./productos.txt', function (err, data) {
-            if (err) {
-                return console.error(err);
-            }
-            var prod = data.toString();
-            prod = JSON.parse(prod);
-            // Leer los datos para eliminar
-            for (var i = 0; i < prod.data.length; i++) {
-                if (id == prod.data[i].id) {
-                    prod.data.splice(i, 1);
-                }
-            }
-            prod.total = prod.data.length;
-            var str = JSON.stringify(prod);
-            // Luego escribe los datos en
-            fs.writeFile('./productos.txt', str, function (err) {
-                if (err) {
-                    console.error(err);
-                }
-                console.log("---------- eliminado correctamente ------------");
-            })
-        })
-
-    }
     async deleteAll() {
         const deletedAll = fs.writeFile('./productos.txt', '', err => {
             if (err) console.log(err);

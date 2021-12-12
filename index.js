@@ -33,7 +33,7 @@ async function main() {
     console.log('Guardo Producto 2');
     let idp2 = await contenedor.save(p2)
     console.log('id de p2: ', idp2);
-    
+
     console.log('Guardo Producto 3');
     let idp3 = await contenedor.save(p3)
     console.log('id de p3: ', idp3);
@@ -45,10 +45,6 @@ async function main() {
     console.log('Busco por ID');
     const res = await contenedor.getById(2);
     console.log('Resultado: ', res);
-    /* 
-        console.log('Elimino por ID');
-        const prodDeleted = await contenedor.deleteById(2)
-        console.log(`Eliminado producto del Id: ${prodDeleted}`); */
 
     console.log('Elimino todo');
     await contenedor.deleteAll();
@@ -69,15 +65,19 @@ async function main() {
     objs = await contenedor.getAll();
     console.log(objs);
 
-    console.log('Elimino por Id el producto 2')
-    await contenedor.deleteById(2);
-    console.log('Producto borrado');
+    //rehacer
+
+    /*   console.log('Elimino por Id el producto 2')
+    await contenedor.deleteById('./productos.txt', 2);
+    console.log('Producto borrado'); */
+
 
     console.log('Muestro con el producto elegido, borrado');
     objs = await contenedor.getAll();
     console.log(objs);
-    
-    
+
+
+
 }
 
 main()
